@@ -1,3 +1,4 @@
+//bu fonksiyon aldigi offset degeriyle o uzakliktaki sehirin yerel saatini bulan fonksiyon
 function convertTime(poffset) {
     let newTime = new Date()
     let localNewTime = newTime.getTime()
@@ -7,19 +8,15 @@ function convertTime(poffset) {
     let convertedTime = new Date(beijingTime)
     return convertedTime;
 }
-
+//bu fonksiyon saatlerimiziekrana yazdiran fonksiyon
 function writeTime() {
     let cityDate = (convertTime(offset))
     let localHours = cityDate.getHours();
     let localMin = cityDate.getMinutes();
     let localSec = cityDate.getSeconds();
-    addzero(localHours,localMin,localSec)
+    localHours = (localHours < 10) ? "0" + localHours : localHours; //Bu kismi kisaltmak icin ugrastim baya ama maalesef yapamadim.
+    localMin = (localMin < 10) ? "0" + localMin : localMin;
+    localSec = (localSec < 10) ? "0" + localSec : localSec;
     let time = `${localHours} : ${localMin} : ${localSec} `
     digitalClock.innerHTML = time;
-}
-
-function addzero(plocalHours,plocalMin,plocalSec) {
-    plocalHours = (plocalHours < 10) ? "0" + plocalHours : plocalHours;
-    plocalMin = (plocalMin < 10) ? "0" + plocalMin : plocalMin;
-    plocalSec = (plocalSec < 10) ? "0" + plocalSec : plocalSec;
 }
