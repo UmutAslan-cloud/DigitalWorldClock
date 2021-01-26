@@ -1,34 +1,37 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: 'Indie Flower', cursive;
 }
 
-#main-content{
+#main-content {
     margin-top: 150px;
     display: flex;
     justify-content: space-around;
     width: 100vw;
-    height: 120vh;  
-   
+    height: 120vh;
+
 }
+
 #clock {
-width: 50vw;
-height: 15vh;
-border: 1px solid black;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: black;
-color: turquoise;
+    width: 50vw;
+    height: 15vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: turquoise;
 }
+
 #city {
     text-align: center;
     width: 10vw;
     height: 3vh;
     border: 1px solid black;
 }
-#digi{
+
+#digi {
     width: 30vw;
     height: 6vh;
     text-align: center;

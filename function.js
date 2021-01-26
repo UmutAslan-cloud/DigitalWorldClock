@@ -1,4 +1,3 @@
-
 function convertTime(poffset) {
     let newTime = new Date()
     let localNewTime = newTime.getTime()
@@ -8,16 +7,19 @@ function convertTime(poffset) {
     let convertedTime = new Date(beijingTime)
     return convertedTime;
 }
+
 function writeTime() {
     let cityDate = (convertTime(offset))
     let localHours = cityDate.getHours();
     let localMin = cityDate.getMinutes();
     let localSec = cityDate.getSeconds();
-    localHours = (localHours < 10) ? "0" + localHours : localHours;
-    localMin = (localMin < 10) ? "0" + localMin : localMin;
-    localSec = (localSec < 10) ? "0" + localSec : localSec;
+    addzero(localHours,localMin,localSec)
     let time = `${localHours} : ${localMin} : ${localSec} `
     digitalClock.innerHTML = time;
 }
 
-
+function addzero(plocalHours,plocalMin,plocalSec) {
+    plocalHours = (plocalHours < 10) ? "0" + plocalHours : plocalHours;
+    plocalMin = (plocalMin < 10) ? "0" + plocalMin : plocalMin;
+    plocalSec = (plocalSec < 10) ? "0" + plocalSec : plocalSec;
+}
